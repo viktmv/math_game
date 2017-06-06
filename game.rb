@@ -1,5 +1,4 @@
 require './question'
-require './player'
 
 class MathGame
   def initialize(player1, player2)

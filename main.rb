@@ -1,4 +1,5 @@
 require './game'
+require './player'
 
 player1 = Player.new('Johnny')
 player2 = Player.new('Amy')
