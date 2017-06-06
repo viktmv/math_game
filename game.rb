@@ -8,11 +8,7 @@ class MathGame
   end
 
   def nextPlayer
-    if (@currentPlayer == @player1)
-      @currentPlayer = @player2
-    else
-      @currentPlayer = @player1
-    end
+    @currentPlayer = @currentPlayer == @player1 ? @player2 : @player1
   end
 
   def start
@@ -38,9 +34,7 @@ class MathGame
 
         @currentPlayer.points += 1
 
-        if (@currentPlayer.hasWon?)
-          puts "#{@currentPlayer.name} wins the game!"
-        end
+        puts "#{@currentPlayer.name} wins the game!" if @currentPlayer.hasWon?
 
         @currentPlayer = self.nextPlayer
         next
@@ -49,7 +43,7 @@ class MathGame
         puts 'Wrong!'
         puts "#{@currentPlayer.name} loses 1 life"
 
-        if (!@currentPlayer.isAlive?)
+        unless @currentPlayer.isAlive?
           puts "#{@currentPlayer.name} has lost the game!"
           puts "******---GAME OVER---******"
         end
